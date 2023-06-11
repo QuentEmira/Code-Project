@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies</title>
+        <style>
+            nav {
+                padding: 0.1rem 0.5rem;
+                display: flex; 
+                align-items: baseline;
+                justify-content: space-between;
+            }
+
+            nav div {
+                display: flex; 
+                gap: 1.5rem;
+                align-items: center;
+
+            }
+
+            nav div h1 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 0.2rem 0.5rem;
+                height: fit-content;
+                color: white;
+                border-radius: 0.2rem;
+                text-decoration: none;
+            }
+            
+            .delete {
+                background-color: red;
+            }
+
+            .edit {
+                background-color: blue;
+            }
+
+            .movie-container {
+                min-width: 30ch;
+                background-color: rgb(72, 72, 72);
+                border: 1px solid darkgray;
+                border-radius: 0.3rem;
+                max-width: fit-content;
+                padding: 1rem 1rem;
+
+            }
+
+            .movie-container h3 {
+                margin: 0.2rem 0rem;
+                font-size: 1.2rem;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                margin-bottom: 1.6rem;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body style="background-color:#0B0D0E; color:#D9D7D4">
+        <nav>
+            <div>
+                <h1>Movies</h1>
+                <a href="{{ url_for('add_movie')}}" style="padding: 0.2rem 0.5rem;
+					background-color: green;
+					height: fit-content;
+					color: white;
+					border-radius: 0.2rem;
+					text-decoration: none;
+                    ">Add Movie</a>
+            </div>
+            <a href="{{ url_for('adminhome')}}" style="padding: 0.2rem 0.5rem;
+					background-color: red;
+					height: fit-content;
+					color: white;
+					border-radius: 0.2rem;
+					text-decoration: none;
+                    ">Home</a>
+        </nav>
+        <section style="display: flex; flex-wrap: wrap; gap: 1rem;">
+            {% for r in e %}
+            <div class="movie-container">
+                <h3>{{ r[1] }}</h3>
+                <div style="display: flex; justify-content: center; gap: 1.6rem;">
+                    <a class="btn edit" href={{ url_for("edit_movie",mid = r[0]) }}> Edit</a>
+                    <a class="btn delete" href={{ url_for('delete_movie',mid = r[0]) }} onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+
+        
+    </body>
+</html>

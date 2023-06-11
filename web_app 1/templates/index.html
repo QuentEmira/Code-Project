@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome!</title>
+		<style>
+			a:hover {
+				font-weight: 500;
+				text-decoration: underline;
+			}
+
+			a {
+				color: peachpuff;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body style="background-color: #0b0d0e; color: #d9d7d4">
+		<h1 style="text-align: center">Movie Ticket Booking Application</h1>
+		<p style="text-align: center">
+			Book tickets to view our favorite actors & artists is the best
+			venues close to you.
+		</p>
+		<form
+			method="POST"
+			style="margin-top: 2.5rem; font-size: 1.2rem; text-align: center"
+		>
+			I'm new here -
+			<a href="{{ url_for('newUser') }}">Sign Up</a><br />
+			I already have an account -
+			<a href="{{ url_for('returnUser') }}">Log in</a>
+		</form>
+	</body>
+</html>

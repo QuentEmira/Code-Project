@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HomePage</title>
+	</head>
+	<body style="background-color: #0b0d0e; color: #d9d7d4">
+		<div
+			style="
+				display: flex;
+				justify-content: space-between;
+				padding: 0.1rem 1.2rem;
+				align-items: center;
+			"
+		>
+			<h1>Welcome {{ un }}</h1>
+			<a
+				href="{{ url_for('logout') }}"
+				style="
+					padding: 0.2rem 0.5rem;
+					background-color: red;
+					height: fit-content;
+					color: white;
+					border-radius: 0.2rem;
+					text-decoration: none;
+				"
+				>Log Out</a
+			>
+		</div>
+		<div
+			style="
+				display: flex;
+				gap: 1rem;
+				align-items: center;
+				padding-left: 0.2rem;
+			"
+		>
+			<h1>My Tickets</h1>
+			<a
+				href="{{ url_for('bookshow') }}"
+				style="
+					padding: 0.2rem 0.5rem;
+					background-color: blue;
+					height: fit-content;
+					color: white;
+					border-radius: 0.2rem;
+					text-decoration: none;
+				"
+				>Book Shows</a
+			>
+		</div>
+		<div style="display: flex; gap: 0.8rem; flex-wrap: wrap">
+			{% for i in row_d %}
+			<div
+				style="
+					border: 1px solid white;
+					background-color: #3a3a3a;
+					width: fit-content;
+					padding: 0.6rem 1rem;
+					position: relative;
+					min-width: 35ch;
+				"
+			>
+				<h2
+					style="
+						font-size: 2rem;
+						font-family: Arial, Helvetica, sans-serif;
+						margin: 0rem;
+					"
+				>
+					{{ i[1] }} ({{ i[3] }})
+				</h2>
+				<section style="margin-bottom: 2rem">
+					<div
+						style="
+							display: flex;
+							gap: 0.2rem;
+							justify-content: start;
+							align-items: baseline;
+						"
+					>
+						<span>{{ i[2] }} &#9733; |</span>
+						<span>{{ i[5] }} |</span>
+						<span>{{ i[4] }}</span>
+					</div>
+					<div>{{ i[6] }}, {{ i[7] }}</div>
+					<div>{{ i[8] }}</div>
+				</section>
+
+				<h3
+					style="
+						font-size: 2rem;
+						position: absolute;
+						right: 5px;
+						bottom: 0;
+						margin: 0rem;
+						font-family: Cambria, Cochin, Georgia, Times,
+							'Times New Roman', serif;
+					"
+				>
+					{{ i[9] }} Tickets
+				</h3>
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>

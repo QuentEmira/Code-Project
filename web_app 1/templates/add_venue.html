@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add Venue</title>
+		<style>
+			h1 {
+				text-align: center;
+			}
+			input,
+			textarea {
+				background-color: rgb(182, 182, 182);
+				border-radius: 0.4rem;
+				font-size: 1rem;
+				font-family: sans-serif;
+				width: fit-content;
+				padding: 0.3rem 0.1rem;
+			}
+
+			label {
+				font-family: "Gill Sans", "Gill Sans MT", Calibri,
+					"Trebuchet MS", sans-serif;
+			}
+
+			.input-wrapper {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 1rem;
+			}
+
+			form input[type="submit"] {
+				text-align: center;
+				background-color: green;
+				font-weight: 500;
+				font-family: "Lucida Sans", "Lucida Sans Regular",
+					"Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+					sans-serif;
+				color: white;
+				padding: 0.2rem 0.6rem;
+			}
+
+			form input[type="submit"]:hover {
+				cursor: pointer;
+				background-color: darkgreen;
+			}
+
+			form {
+				width: fit-content;
+				margin: 0px auto;
+				padding: 1rem 3rem 2rem 3rem;
+				border: 1px solid lightgray;
+				border-radius: 1rem;
+			}
+		</style>
+	</head>
+	<body style="background-color: #0b0d0e; color: #d9d7d4">
+		<h1>Add Venue</h1>
+		<form action="/plus_venue" method="POST">
+			<div class="input-wrapper">
+				<label for="name">Venue's Name</label>
+				<input
+					type="text"
+					name="name"
+					id="name"
+					autofocus
+					autocomplete="off"
+				/>
+			</div>
+			<div class="input-wrapper">
+				<label for="location">Venue's Location</label>
+				<input type="text" name="loc" id="location" />
+			</div>
+
+			<div
+				style="display: flex; justify-content: center; margin-top: 2rem"
+			>
+				<input type="submit" />
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Edit Movie</title>
+		<style>
+			input,
+			textarea {
+				background-color: rgb(182, 182, 182);
+				border-radius: 0.4rem;
+				font-size: 1rem;
+				font-family: sans-serif;
+				width: fit-content;
+				padding: 0.3rem 0.1rem;
+			}
+
+			label {
+				font-family: "Gill Sans", "Gill Sans MT", Calibri,
+					"Trebuchet MS", sans-serif;
+			}
+
+			.input-wrapper {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 1rem;
+			}
+
+			form input[type="submit"] {
+				text-align: center;
+				background-color: green;
+				font-weight: 500;
+				font-family: "Lucida Sans", "Lucida Sans Regular",
+					"Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+					sans-serif;
+				color: white;
+				padding: 0.2rem 0.6rem;
+			}
+
+			form {
+				width: fit-content;
+				margin: 0px auto;
+				padding: 1rem 1rem 2rem 1rem;
+				border: 1px solid lightgray;
+				border-radius: 1rem;
+			}
+		</style>
+	</head>
+	<body style="background-color: #0b0d0e; color: #d9d7d4">
+		<h1 style="text-align: center">Edit Movie</h1>
+		<form action="/update_movie" method="POST">
+			<div class="input-wrapper">
+				<label for="name">Movie Name</label>
+				<input
+					type="text"
+					name="name"
+					id="name"
+					autofocus
+					autocomplete="off"
+					value="{{ e[1] }}"
+				/>
+			</div>
+			<div class="input-wrapper">
+				<label for="description">Description</label>
+				<textarea rows="5" cols="45" name="desc" id="description">
+{{ e[2]}}</textarea
+				>
+			</div>
+			<section style="display: flex; gap: 1.5rem">
+				<div class="input-wrapper">
+					<label for="rating">Rating</label>
+					<input
+						type="text"
+						name="rate"
+						id="rating"
+						value="{{e[3]}}"
+					/>
+				</div>
+
+				<div class="input-wrapper">
+					<label for="type">Type</label>
+					<input type="text" name="type" id="type" value="{{e[4]}}" />
+				</div>
+			</section>
+			<section style="display: flex; gap: 1.5rem">
+				<div class="input-wrapper">
+					<label for="language">Language</label>
+					<input
+						type="text"
+						name="lang"
+						id="language"
+						value="{{e[5]}}"
+					/>
+				</div>
+				<div class="input-wrapper">
+					<label for="duration">Duration</label>
+					<input
+						type="text"
+						name="dur"
+						id="duration"
+						value="{{e[6]}}"
+					/>
+				</div>
+			</section>
+			<div class="input-wrapper">
+				<label for="tags">Tags</label>
+				<input type="text" name="tags" id="tags" value="{{e[7]}}" />
+			</div>
+			<input
+				type="text"
+				name="mid"
+				value="{{e[0]}}"
+				style="display: none"
+			/>
+			<div
+				style="display: flex; justify-content: center; margin-top: 2rem"
+			>
+				<input type="submit" />
+			</div>
+		</form>
+	</body>
+</html>

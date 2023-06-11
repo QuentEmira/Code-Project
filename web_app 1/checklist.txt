@@ -1,0 +1,28 @@
+This will contain points of all the things my program is capable of doing.
+
+Core Functionality:
+Admin and User Login:
+    - Form for username and password for username
+    - Separate form for admin Login
+    - Model is suitable for User
+    - Simple HTML form
+
+Venue Management:
+    - Creation of a new venue is possible
+    - Editing a venue is possible
+    - Removing a venue is possible only if the venue had no shows. Confirmation is asked for.
+
+Show Management:
+    - Creating a show is possible
+    - Editing a show is possible
+    - Removing a show is possibe, with confirmation.
+    - Shows are created in their respective venues.
+    - Each show can have an individual ticket price.
+
+Search for Show/Venue:
+    - Ability to search for movies based on tags.
+    - Ability to search for theatres basen on location.
+
+Book Show Tickets:
+    - Ability to book multiple Tickets
+    - Ability to stop taking bookings in case of a houseful

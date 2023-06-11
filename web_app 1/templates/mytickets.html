@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Tickets</title>
+    </head>
+    <body style="background-color:#0B0D0E; color:#D9D7D4 ;text-align: center;">
+        <h1 style="">My Tickets</h1>
+        {% for i in row_d %}
+        <div>
+            <h2>{{ i[1] }}</h2>
+            Rating: {{ i[2] }}<br>
+            Type: {{ i[3] }}<br>
+            Language: {{ i[4] }}<br>
+            Duration: {{ i[5] }}<br>
+            <br>
+            Venue: {{ i[6] }}<br>
+            Location: {{ i[7] }}<br><br>
+            Timing: {{ i[8] }}<br>
+            Seats: {{ i[9] }}<br>
+            <br>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('userhome') }}">Home</a>
+    </body>
+</html>

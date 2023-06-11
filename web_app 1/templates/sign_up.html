@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up!</title>
+    </head>
+    <body style="background-color:#0B0D0E; color:#D9D7D4">
+        <h1 style="text-align: center;">SignUp</h1>
+        <form action="/signup" method="POST" style="border: 1px solid black; padding: 0.25rem 1rem; display:flex; flex-direction: column; width: 40ch; margin: 0px auto; border-radius: 0.25rem;
+">
+            <label for="UserName">Username</label>
+            <input type="text" name="un" placeholder="John Doe" style="margin-top: 0.1rem;">
+            <label for="Pass" style="margin-top: 1rem;">Password</label>
+            <input type="password" name="pass" placeholder="yourStrongPassword" style="margin-top: 0.1rem;">
+
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem;">
+
+                <button type="submit" style="background-color: darkgray; border: 0.5px solid black; border-radius: 0.1rem; text-decoration: none; color: black; padding: 0 0.2rem; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">Submit</button>
+                <a href="{{ url_for('returnUser') }}" style="background-color: darkgray; border: 0.5px solid black; border-radius: 0.1rem; text-decoration: none; color: black; padding: 0 0.2rem; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">Login</a>
+            </div>
+        </form>
+    </body>
+</html>
